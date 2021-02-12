@@ -101,9 +101,10 @@ export default class VueGtmPlugin {
       const dataLayer: DataLayerObject[] = (window.dataLayer = window.dataLayer ?? []);
       dataLayer.push({
         ...additionalEventData,
-        event: "content-view",
-        "content-name": path,
-        "content-view-name": screenName,
+        event: "page_view",
+        "page_path": path,
+        "page_title": screenName,
+        "page_location": window.location.href
       });
     }
   }
